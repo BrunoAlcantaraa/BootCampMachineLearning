@@ -4,7 +4,9 @@ class Contador:
     def inst(self):
         return 'Estou bem!'
     
-    @classmethod
+    # Método de classe, aonde não precisamos instanciar para uso, mas precisamos 
+    # passar a classe (vamos se dizer assim)
+    @classmethod 
     def inc(cls):
         cls.contador += 1
         return cls.contador
@@ -14,6 +16,8 @@ class Contador:
         cls.contador -= 1
         return cls.contador
     
+    # Método Estático, aonde não precisamos instanciar para uso também, mas diferente
+    # do de classe, é livre de cls e self
     @staticmethod
     def mais_um(n):
         return n + 1

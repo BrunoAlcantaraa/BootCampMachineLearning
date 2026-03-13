@@ -1,6 +1,8 @@
 
 class Produto:
+    # Como se fosse o construtor em java
     def __init__(self, nome, preco = 1.99, desc = 0):
+        # Como se fosse o this do java (self)
         self.nome = nome 
         self.__preco = preco # deixa privado, porem ainda dá para acessar com _Produto__preco
         self.desc = desc
