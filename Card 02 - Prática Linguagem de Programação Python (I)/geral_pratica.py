@@ -430,14 +430,14 @@ class Pessoa():
         self.__nome = nome # self como se fosse o this
         self.ano_nasc = ano_nasc
        
+    @property # getter
+    def nome(self):
+        return self.__nome
+
     @nome.setter # setter
     def nome(self, nome):
         if nome != '':
             self.__nome = nome
-    
-    @property # getter
-    def nome(self):
-        return self.__nome
        
     @property # define a função como se fosse um atributo, não precisando usar "()" no final
     def idade(self):
@@ -449,9 +449,14 @@ class Pessoa():
         
     @classmethod # método de classe, onde não depende da instância também
     def nasceu(cls):
-        pessoas_no_mundo += 1
+        cls.pessoas_no_mundo += 1
     
 bruno = Pessoa('Bruno', 18)
+print(f'{bruno.nome}')
+
+bruno.nome = 'Bruno Alcantara'
+print(f'{bruno.nome}')
+
 Pessoa.cumprimentar()
 Pessoa.nasceu()
 
